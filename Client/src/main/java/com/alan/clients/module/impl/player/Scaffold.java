@@ -240,20 +240,20 @@ public class Scaffold extends Module {
     }
 
     public void calculateRotations() {
-        float yawOffset = Float.parseFloat(String.valueOf(this.yawOffset.getValue().numberValue()));
+        float yawOffset = Float.parseFloat(String.valueOf(this.yawOffset.getValue().intValue()));
 
         /* Calculating target rotations */
         switch (mode.getValue().getName()) {
             case "Normal":
                 if (ticksOnAir > 0 && !RayCastUtil.overBlock(RotationComponent.rotations, enumFacing.getEnumFacing(), blockFace, rayCast.getValue().getName().equals("Strict"))) {
-                    getRotations(Float.parseFloat(String.valueOf(this.yawOffset.getValue().numberValue())));
+                    getRotations(Float.parseFloat(String.valueOf(this.yawOffset.getValue().intValue())));
                 }
                 break;
 
             case "UPDATED-NCP":
 
                 if (ticksOnAir > 0 && !RayCastUtil.overBlock(RotationComponent.rotations, enumFacing.getEnumFacing(), blockFace, rayCast.getValue().getName().equals("Strict"))) {
-                    getRotations(Float.parseFloat(String.valueOf(this.yawOffset.getValue().numberValue())));
+                    getRotations(Float.parseFloat(String.valueOf(this.yawOffset.getValue().intValue())));
                 }
 
                 targetPitch = 69;
@@ -273,7 +273,7 @@ public class Scaffold extends Module {
                         getRotations(yawOffset);
                     }
                 } else {
-                    getRotations(Float.parseFloat(String.valueOf(this.yawOffset.getValue().numberValue())));
+                    getRotations(Float.parseFloat(String.valueOf(this.yawOffset.getValue().intValue())));
                     targetYaw = mc.thePlayer.rotationYaw - yawOffset;
                 }
                 break;
