@@ -444,7 +444,7 @@ public class Scaffold extends Module {
     public final Listener<StrafeEvent> onStrafe = event -> {
         this.runMode();
 
-        if (!Objects.equals(yawOffset.getValue().intValue(), 0 || yawOffset.getValue().intValue(), -0) && !movementCorrection.getValue()) {
+        if (!Objects.equals(yawOffset.getValue().intValue(), 0) && !movementCorrection.getValue()) {
             MoveUtil.useDiagonalSpeed();
         }
     };
